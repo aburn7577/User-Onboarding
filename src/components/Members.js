@@ -7,7 +7,7 @@ function Members({ details }) {
 
     return (
         <div className='friend container'>
-            <h2>`${details.first_name} {details.last_name}`</h2>
+            <h2>{details.first_name}&nbsp; {details.last_name}</h2>
             <p>Email: {details.email}</p>
 
         </div>

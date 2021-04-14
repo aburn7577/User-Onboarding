@@ -16,7 +16,7 @@ export default function Form(props) {
     }
 
     return (
-        <form onSubmit={onSubmit}>
+        <form className='App' onSubmit={onSubmit}>
             <div>
                 <h2>Add yourself to the team!</h2>
 
@@ -60,7 +60,7 @@ export default function Form(props) {
                 <input
                         type="checkbox"
                         name="terms"
-                        value={values.terms}
+                        checked={values.terms}
                         onChange={onChange} />
                 </label>
             </div>
@@ -70,6 +70,7 @@ export default function Form(props) {
                 <div>{errors.first_name}</div>
                 <div>{errors.last_name}</div>
                 <div>{errors.email}</div>
+                <div>{errors.password}</div>
 
             </div>
 

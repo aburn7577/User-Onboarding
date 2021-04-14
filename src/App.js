@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Axios from 'axios'
 import React, { useState, useEffect } from 'react'
@@ -35,20 +34,21 @@ function App() {
   const [disabled, setDisabled] = useState(startDisabled)
 
   //Axios Stuff///
-  const getMembers = () => {
-    Axios.get('https://reqres.in/api/users')
-      .then(res => {
-        setMembers(res.data)
-      })
-      .catch(error => {
-        console.log(error)
-      })
-  }
+  // const getMembers = () => {
+  //   Axios.get('https://reqres.in/api/users')
+  //     .then(res => {
+  //       setMembers(res.data)
+  //     })
+  //     .catch(error => {
+  //       console.log(error)
+  //     })
+  // }
   const postNewMember = newMember => {
     Axios.post('https://reqres.in/api/users', newMember)
       .then(res => {
         setMembers([...members, res.data])
         setFormValues(startFormValues)
+        console.log('it is working')
       })
       .catch(error => {
         setFormValues(startFormValues)
@@ -87,9 +87,9 @@ function App() {
     postNewMember(newMembers)
   }
   // Side effects//
-  useEffect(() => {
-    getMembers()
-  }, [])
+  // useEffect(() => {
+  //   getMembers()
+  // }, [])
   useEffect(() => {
     schema.isValid(formValues)
       .then(valid => {
